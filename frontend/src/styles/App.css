@@ -1,0 +1,37 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #FFF;
+  height: 150px;
+  width: 100%;
+  padding: 20px;
+  color: black;
+
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.container{
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

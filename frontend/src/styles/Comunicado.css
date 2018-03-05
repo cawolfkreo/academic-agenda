@@ -1,0 +1,18 @@
+.my-jumbotron{
+    padding-top: 0px;
+    padding-bottom: 16px;
+
+    min-height: 15vh;
+}
+
+.negrilla{
+    font-weight: bold;
+}
+
+.txt-center{
+    text-align: center;
+}
+
+.txt-right{
+    text-align: right;
+}

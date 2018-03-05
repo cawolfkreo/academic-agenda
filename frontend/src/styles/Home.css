@@ -1,0 +1,10 @@
+h1, h2, h3{
+	text-align: center;
+	color: white;
+}
+
+.Home{
+	background-image: url('../img/fondo.jpg'); 
+	width: 100%; 
+	height: 100vh;
+}
