@@ -4,13 +4,24 @@ const router = express.Router();
 const assert = require("assert");
 
 const MongoClient = require("mongodb").MongoClient;
+
+/*Camilo Zambrano Votto: NUNCA EN LA VIDA QUEMEN EN EL CÓDIGO LAS CREDENCIALES DE ACCESO A UNA BASE DE DATOS 
+SI SU PROYECTO ESTÁ EN UN REPOSITORIO PUBLICO. Es un problema de seguridad grave. Para evitarse esto es mejor poner 
+esta información en una variable de entorno o en un archivo .env */
 //const url = "mongodb://localhost:27017"
 const url = "mongodb://Basic1:Pass1@ds251598.mlab.com:51598/academic-agenda";
 
 function verifyUser(login_user, login_password, callback) {
     const dbName = "academic-agenda";
 
-    MongoClient.connect(url, function (err, client) {
+    MongoClient.connect(url, function (err, client) { /*Camilo Zambrano: Si utilizan arrow function en lugar de una funcion 
+    anonima, podrian evitarse problemas que puedan generarse al utilizar this.blabla, acá no pasa nada malo por esto, pero
+    es una sugerencia a tener en cuenta para el futuro. */
+        
+        
+        /*Camilo Zambrano: No es es buena idea dejar que las excepciones paren la ejecucion del back-end.
+        Si un usuario esta corriendo su front end y de la nada nodejs deja de funcionar, la aplicación va
+        a tener problemas de ejecucion y en la vida real esto sería igual a perdida de clientes.*/
         assert.equal(null, err);
         console.log("Connected succesfully to DB");
 
@@ -24,7 +35,10 @@ function verifyUser(login_user, login_password, callback) {
             ]
         }).toArray(function (err, docs) {
             assert.equal(null, err);
-
+    
+            /*Camilo Zambrano: No es necesario comentar los logs de consola que han utilizado, podrían revisar
+            que fue lo que llegó e imprimir un mensaje que muestre los resultados de la ejecucion, un 
+            "console.log("se encontro esto:");" no estaría mal*/
             //console.log(docs);
             if(docs.length == 1){
                 callback(docs);
