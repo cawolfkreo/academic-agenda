@@ -17,6 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "proxy": "http://localhost:3001/"
+  } /*Camilo Zambrano: No es necesario para el despliegue en Heroku el proxy. Ya que en Heroku
+  ustedes no ejecutan el front-end en modo de desarrollo, sino que el Back-end carga el build 
+  que se genera*/
 }
